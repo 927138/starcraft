@@ -1,6 +1,6 @@
 package com.practice.ji;
 
-public class Protoss extends Unit implements Fly, FlyAttack {
+public class Protoss extends Unit{
 
     private int attack;
     private int defense;
@@ -8,6 +8,11 @@ public class Protoss extends Unit implements Fly, FlyAttack {
     public Protoss(int attack, int defense){
         this.attack = attack;
         this.defense = defense;
+    }
+
+    @Override
+    public String getBrood() {
+        return "Protoss";
     }
 
     @Override

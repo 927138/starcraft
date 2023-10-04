@@ -6,4 +6,5 @@ public abstract class Unit implements Fly, FlyAttack {
     public abstract void setDefense(int defense);
     public abstract int getAttack();
     public abstract int getDefense();
+    public abstract String getBrood();
 }

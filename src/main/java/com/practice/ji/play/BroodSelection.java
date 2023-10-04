@@ -24,12 +24,22 @@ import java.util.List;
 public class BroodSelection {
 
     public static void choice(List<Unit> brood, int choice){
-        if(choice < 1 || choice > 3)
-            throw new IllegalArgumentException("잘못된 입력 : ");
 
-        if(choice == 1) protossInit(brood);
-        if(choice == 2) terranInit(brood);
-        if(choice == 3) zergInit(brood);
+        switch (choice){
+            case 1:
+                protossInit(brood);
+                break;
+            case 2:
+                terranInit(brood);
+                break;
+            case 3:
+                zergInit(brood);
+                break;
+            default:
+                System.out.println("잘못된 입력으로 종료됩니다.");
+                break;
+        }
+
 
     }
     private static void protossInit (List<Unit> proto){

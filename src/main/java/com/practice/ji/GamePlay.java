@@ -20,7 +20,7 @@ public class GamePlay {
         int userBrood = 0;
         int computerBrood = (int) (Math.random()*3) + 1;
 
-        System.out.println("스타크래프트 게임을 시작하겟습니다.");
+        System.out.println("스타크래프트 게임을 시작.");
         System.out.print("종족을 선택해 주세요. 1~3(P/1, T/2, Z/3) : ");
         userBrood = Integer.parseInt(br.readLine());
         System.out.println("컴퓨터는 랜덤으로 진행...");
@@ -29,13 +29,19 @@ public class GamePlay {
         BroodSelection.choice(computer, computerBrood);
         Operator.print(user, computer);
 
-
         while (!computer.isEmpty() && !user.isEmpty()){
-            System.out.print("공격 유닛을 선택 : ");
-            int attack = Integer.parseInt(br.readLine());
-            System.out.print("공격할 유닛을 선택 : ");
-            int defense = Integer.parseInt(br.readLine());
-            Operator.attack(user, computer, attack, defense);
+            int attack = 0;
+            int defense = 0;
+            try {
+                System.out.print("공격 유닛을 선택 : ");
+                attack = Integer.parseInt(br.readLine());
+                System.out.print("공격할 유닛을 선택 : ");
+                defense = Integer.parseInt(br.readLine());
+                Operator.attack(user, computer, attack, defense);
+            }catch (NumberFormatException e){
+                System.out.println("잘못된 입력으로 턴이 넘어감");
+            }
+
             Operator.attack(computer, user, (int) (Math.random()*computer.size()), (int) (Math.random() * user.size()));
             Operator.print(user, computer);
         }

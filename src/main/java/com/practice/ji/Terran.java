@@ -11,6 +11,11 @@ public class Terran extends Unit {
     }
 
     @Override
+    public String getBrood() {
+        return "Terran";
+    }
+
+    @Override
     public void setAttack(int attack) {
         this.attack = attack;
     }

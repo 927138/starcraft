@@ -1,6 +1,6 @@
 package com.practice.ji;
 
-public class Zerg extends Unit implements Fly, FlyAttack{
+public class Zerg extends Unit{
 
     private int attack;
     private int defense;
@@ -8,6 +8,11 @@ public class Zerg extends Unit implements Fly, FlyAttack{
     public Zerg(int attack, int defense){
         this.attack = attack;
         this.defense = defense;
+    }
+
+    @Override
+    public String getBrood() {
+        return "Zerg";
     }
 
     @Override
